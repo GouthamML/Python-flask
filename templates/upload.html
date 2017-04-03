@@ -1,0 +1,131 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Upload</title>
+
+    <link rel="stylesheet" href="../static/css/demo.css">
+    <link rel="stylesheet" href="../static/css/form-basic.css">
+
+    
+
+
+
+
+</head>
+
+    <body>
+                {{ form.csrf_token }} 
+        
+            
+        </form>
+    </body></html>
+
+
+
+     <div class="main-content">
+
+        <!-- You only need this form and the form-basic.css -->
+
+        <form class="form-basic" method="post" action="{{url_for('uploading')}}" enctype="multipart/form-data">
+
+            <div class="form-title-row">
+                <h1>Upload materials</h1>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>{{ form.f_name.label }}</span>
+                    <!-- <input type="text" name="name"> -->  {{ form.f_name }}
+
+                </label>
+            </div>
+
+            <!-- <div class="form-row">
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email">
+                </label>
+            </div>
+ -->
+            <div class="form-row">
+                <label>
+                    <span>Branch</span>
+                    <select name="branch">
+                        <option value="IS">Information Science</option>
+                        <option value="CS">Computer Science</option>
+                        <option value="EC">Electronics & communications</option>
+                        <option value="ME">Mechanical</option>
+                    </select>
+                </label>
+            </div>
+
+             <div class="form-row">
+                <label>
+                    <span>Semester</span>
+                    <select name="sem">
+                        <option value=1>I sem</option>
+                        <option value=2>II sem</option>
+                        <option value=3>III sem</option>
+                        <option value=4>IV sem</option>
+                        <option value=5>V sem</option>
+                        <option value=6>VI sem</option>
+                        <option value=7>VII sem</option>
+                        <option value=8>VIII sem</option>
+                    </select>
+                </label>
+            </div>
+
+
+            <div class="form-row">
+                <label>
+                    <span>Description</span>
+                    <textarea rows="4" cols="50" name="textarea"></textarea>
+                </label>
+            </div>
+
+           <!--  <div class="form-row">
+                <label>
+                    <span>Checkbox</span>
+                    <input type="checkbox" name="checkbox" checked>
+                </label>
+            </div> -->
+
+            <div class="form-row">
+                <label><span></span></label>
+                <div class="form-radio-buttons">
+
+                    <div>
+                       {{ form.public }}<br>
+                    </div>
+
+                    <!-- <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Radio option 2</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Radio option 3</span>
+                        </label>
+                    </div>
+ -->
+                </div>
+            </div>
+            <div class="form-row">
+                <input type="file" name="file">
+            </div>
+            <div class="form-row">
+                <button type="submit">Submit Form</button>
+            </div>
+
+        </form>
+
+    </div>

@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <form action="{{ url_for('tformfill') }}" method="POST" enctype="multipart/form-data">
+           <p>Name</p> <input type="text" name="name" value="" /><br>
+            <p>Branch  </p>  <select name="branch">
+    <option value="IS">IS</option>
+    <option value="CS">CS</option>
+    <option value="EC">EC</option>
+            </select>
+              <br>
+          
+  </select><br>
+            <p>College</p><select name="clg">
+            <option value=dsce>DSCE</option>
+            <option value=bmsce>BMSCE</option>
+            <option value=rvce>RVCE</option>
+            </select>
+            <br>
+            <input type="file" name="file"><br /><br />
+            <input type="submit" value="Submit" />
+        </form>
+        
+            </body>
+</html>

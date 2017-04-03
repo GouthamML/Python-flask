@@ -1,0 +1,95 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    <link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/static/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <script src="/static/js/jquery.min.js"></script>
+    <link href="/static/css/theme-style.css" rel='stylesheet' type='text/css' />
+     <script src="/static/js/jquery.easing.min.js"></script>
+     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300,500,700,800,900,600,200' rel='stylesheet' type='text/css'>
+     <script type="text/javascript"   src="/static/js/jquery.smint.js"></script>
+<style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%;
+    border-radius: 5px;
+    }
+
+.card:hover {
+    box-shadow: 15px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+div {
+	background-color:
+}
+
+.container {
+    padding: 2px 16px 0px 0px;
+    /*background-color: lightblue;*/
+
+
+}
+</style>
+</head>
+<body>
+<nav class="subMenu navbar-custom navbar-scroll-top" id="navClass" role="navigation">
+          <div class="container">
+              <div class="navbar-header page-scroll">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                      <img src="/static/images/nav-icon.png" title="drop-down-menu" /> 
+                  </button>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
+                  <ul class="nav navbar-nav">
+                      <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                      <li class="active">
+                          <a id="sTop" class="subNavBtn" href="#">Home</a>
+                      </li>
+                      <li class="page-scroll">
+                          <a id="s1" class="subNavBtn" href="#">About</a>
+                      </li>
+                      <li class="page-scroll">
+                          <a id="s2" class="subNavBtn" href="#">Portfolio</a>
+                      </li>
+                      <li class="page-scroll">
+                          <a id="s3" class="subNavBtn" href="#">Testimonials</a>
+                      </li>
+                        <li class="page-scroll">
+                          <a id="s4" class="subNavBtn" href="{{url_for('logout')}}">Logout</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+                <a  id="s4" class="right-msg subNavBtn msg-icon"href="#"><span> </span></a>
+                  <div class="clearfix"> </div>
+          </div>
+          <!-- /.container -->
+      </nav>
+    <!----//End-top-nav---->
+
+<h2>Round Card</h2>
+{% for key in downlink  %} 
+
+<div class="card" style="background-color:#FFEB3B ">
+  <!img src="img_avatar2.png" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>
+			 <a href="http://localhost:5000/uploads/{{downlink[key]}}">{{key}}</a><br>  </b></h4> 
+    <p>Interior Designer</p> 
+  </div>
+</div>
+<br>
+{% endfor %} 
+</body>
+</html> 

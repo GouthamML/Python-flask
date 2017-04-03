@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Article News Card</title>
+  <script src="//use.typekit.net/xyl8bgh.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+      
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='../static/css/__codepen_io_andytran_pen.css'>
+
+      <link rel="stylesheet" href="../static/css/style_card.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="../static/images/fav-icon.png" />
+    <link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="../static/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../static/js/jquery.min.js"></script>
+     <!-- Custom Theme files -->
+    <link href="../static/css/theme-style.css" rel='stylesheet' type='text/css' />
+       <script src="../static/js/jquery.easing.min.js"></script>
+       <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/fav-icon.png" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300,500,700,800,900,600,200' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <!----requred-js-files---->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!----//requred-js-files---->
+    <script type="text/javascript"  src="../static/js/jquery.smint.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function() {
+          $('.subMenu').smint({
+            'scrollSpeed' : 1000
+          });
+      });
+    </script>
+  </head>
+  <body >
+   
+    <!----//End-container----->
+    <!----start-top-nav---->
+    <nav class="subMenu navbar-custom navbar-scroll-top" id="navClass" role="navigation">
+          <div class="container">
+              <div class="navbar-header page-scroll">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                      <img src="../static/images/nav-icon.png" title="drop-down-menu" /> 
+                  </button>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
+                  <ul class="nav navbar-nav">
+                      <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                      <li class="active">
+                          <a id="sTop" class="subNavBtn" href="http://localhost:5000">Home</a>
+                      </li>
+                      <li class="page-scroll">
+                          <a id="s1" class="subNavBtn" href="#">About</a>
+                      </li>
+                      <li class="page-scroll">
+                          <a id="s2" class="subNavBtn" href="#">Portfolio</a>
+                      </li>
+                      <li class="page-scroll">
+                          <a id="s3" class="subNavBtn" href="#">Testimonials</a>
+                      </li>
+                        <li class="page-scroll">
+                          <a id="s4" class="subNavBtn" href="{{url_for('logout')}}">Logout</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+                <a  id="s4" class="right-msg subNavBtn msg-icon"href="#"><span> </span></a>
+                  <div class="clearfix"> </div>
+          </div>
+          <!-- /.container -->
+      </nav>   <!----//End-top-nav---->
+    <br><br><br>
+  {% for i in test %}
+  <div class="container">
+  <!-- Normal Demo-->
+  <div class="column">
+    <div class="demo-title"></div>
+    <!-- Post-->
+    <div class="post-module">
+      <!-- Thumbnail-->
+      <div class="thumbnail">
+        <div class="date">
+          <div class="day">ABC</div>
+          <div class="month">Dept</div>
+        </div><img src="https:../static/images/"/>
+      </div>
+      <!-- Post Content-->
+      <div class="post-content">
+        <h1 class="title">{{i}}</h1>
+        <div class="description">
+          <h2 class="sub_title">Department</h2><a class="description" href="http://localhost:5000/teacher/{{test[i]}}/files">View Files</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Hover Demo-->
+</div>
+{% endfor %}
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="../static/js/card.js"></script>
+}
+
+</body>
+</html>

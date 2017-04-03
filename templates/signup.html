@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Daily UI - Day 1 Sign In</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="static/css/stylelogin.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Notice<span>Board!</span></    span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Sign up</h2>
+			</div>
+            <form action="{{url_for('add_db')}}" method="POST">
+			<label for="username">Username</label>
+			<br/>
+			<input type="text" id="username" name="username">
+			<br/>
+            <label for="email">Email</label>
+            </br>
+            <input type="text" id="email" name="email">
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" id="password" name="password">
+			<br/>
+            <input type="radio" name="job" value="student" checked>I sleep in the class<br>
+            <input type="radio" name="job" value="teacher">I make all to sleep in the class<br>
+            
+
+			<button type="submit">Sign up</button>
+			<br/>
+            </form>
+            <a href="{{url_for('signup')}}"><p class="small">New here?</p></a>
+			<a href="#"><p class="small">Forgot your password?</p></a>
+		</div>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
+
+</html>
